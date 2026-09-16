@@ -103,3 +103,5 @@ jobs:
             out/arch/arm64/boot/Image
             out/arch/arm64/boot/dts/vendor/qcom/*.dtb
             out/arch/arm64/boot/dtbo.img
+
+# Re-enabled for fork by supersoftstar Wed Sep 16 15:17:35 UTC 2026
