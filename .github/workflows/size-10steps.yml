@@ -1,0 +1,16 @@
+on:
+  workflow_dispatch:
+jobs:
+  j:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "step 0"
+      - run: echo "step 1"
+      - run: echo "step 2"
+      - run: echo "step 3"
+      - run: echo "step 4"
+      - run: echo "step 5"
+      - run: echo "step 6"
+      - run: echo "step 7"
+      - run: echo "step 8"
+      - run: echo "step 9"
