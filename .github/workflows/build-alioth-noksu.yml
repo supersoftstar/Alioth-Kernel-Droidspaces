@@ -1,5 +1,6 @@
 name: Build Alioth (Droidspaces, no KSU)
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:
 
 jobs:
   build:
