@@ -1,0 +1,11 @@
+on:
+  workflow_dispatch:
+jobs:
+  j:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          cat >> config <<EOF
+CONFIG_A=y
+CONFIG_B=y
+EOF
