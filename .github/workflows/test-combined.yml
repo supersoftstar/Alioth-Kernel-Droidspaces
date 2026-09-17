@@ -1,0 +1,14 @@
+on:
+  workflow_dispatch:
+jobs:
+  j:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          cat >> config <<EOF
+CONFIG_A=y
+EOF
+          sed -i 's/foo/bar/g' file.txt
+          if grep -q x file; then
+            echo "has x"
+          fi
