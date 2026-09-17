@@ -15,10 +15,19 @@ jobs:
           fetch-depth: 1
       - name: Add swap
         run: |
-          sudo fallocate -l 5G /swapfile
+          set -e
+          sudo swapoff /swapfile 2>/dev/null || true
+          sudo rm -f /swapfile
+          if sudo fallocate -l 4G /swapfile; then
+            echo "fallocate OK"
+          else
+            echo "fallocate failed, trying dd"
+            sudo dd if=/dev/zero of=/swapfile bs=1M count=4096 status=none
+          fi
           sudo chmod 600 /swapfile
           sudo mkswap /swapfile
           sudo swapon /swapfile
+          free -h
       - name: Toolchain
         run: |
           git clone https://gitlab.com/ThankYouMario/android_prebuilts_clang-standalone.git --depth 1 toolchain/llvm
