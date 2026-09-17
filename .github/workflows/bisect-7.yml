@@ -1,0 +1,8 @@
+on:
+  workflow_dispatch:
+jobs:
+  j:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          git clone https://github.com/torvalds/linux --depth 1
